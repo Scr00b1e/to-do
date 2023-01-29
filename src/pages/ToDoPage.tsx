@@ -1,6 +1,8 @@
 import Add from '@/components/Add'
 import ToDo from '@/components/ToDo'
 import { ToDoProps } from '@/types/todo'
+import Button from '@mui/material/Button'
+import ListItem from '@mui/material/ListItem'
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import React from 'react'
@@ -32,18 +34,20 @@ const ToDoPage: React.FC<ToDoProps> = ({ todos }) => {
 
     return (
         <div className='container'>
-            <Add />
-            <ul>
-                {
-                    todos &&
-                    todos.map((obj: any) => (
-                        <li key={obj.id}>
-                            <ToDo comment={obj.comment} />
-                        </li>
-                    ))
-                }
-            </ul>
-            <button onClick={() => router.push('/')}>Back</button>
+            <div className='todoPage'>
+                <Add />
+                <ListItem className='todoPage__list'>
+                    {
+                        todos &&
+                        todos.map((obj: any) => (
+                            <li key={obj.id} className='todoPage__card'>
+                                <ToDo comment={obj.comment} />
+                            </li>
+                        ))
+                    }
+                </ListItem>
+                <Button variant='contained' onClick={() => router.push('/')}>Back</Button>
+            </div>
         </div>
     )
 }

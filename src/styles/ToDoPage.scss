@@ -1,0 +1,27 @@
+.todoPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__card {
+    padding: 20px;
+    margin: 10px;
+
+    width: 200px;
+    height: 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: rgb(154, 153, 153);
+  }
+}

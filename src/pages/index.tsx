@@ -1,4 +1,4 @@
-import styles from '@/styles/Home.module.css'
+import Button from '@mui/material/Button'
 import { useRouter } from 'next/router'
 
 export default function Home() {
@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className='container'>
       <h1>Welcome!</h1>
-      <button onClick={() => router.push('/ToDoPage')}>Go to page</button>
+      <Button variant='contained' onClick={() => router.push('/ToDoPage')}>Go to page</Button>
     </div>
   )
 }

@@ -5,9 +5,11 @@ const ToDo: React.FC<ToDoType> = ({ comment }) => {
 
   return (
     <>
-      <input type="checkbox" />
-      {comment}
       <button>Delete</button>
+      <div>
+        <input type="checkbox" />
+        {comment}
+      </div>
     </>
   )
 }

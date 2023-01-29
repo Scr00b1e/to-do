@@ -1,3 +1,4 @@
+import { TextField } from '@mui/material'
 import React from 'react'
 // async function AddTodo(name: string) {
 //     await fetch(`${process.env.API_HOST}/toDo/add`, {
@@ -23,7 +24,8 @@ const Add: React.FC = () => {
 
     return (
         <div>
-            <input type="text" value={comment} onChange={(e) => setComment(e.target.value)} />
+            {/* <TextField id="filled-basic" label="Filled" variant="filled" /> */}
+            <TextField type="text" value={comment} onChange={(e) => setComment(e.target.value)} variant="outlined" id="outlined-basic" label="Outlined" />
             <button onClick={onAdd}>Add</button>
         </div>
     )
