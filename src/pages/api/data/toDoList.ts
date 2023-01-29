@@ -1,5 +1,5 @@
 export const ToDoList = [
-    { id: '0', name: 'sup bros', isDone: false },
-    { id: '1', name: 'some stuff', isDone: false },
-    { id: '2', name: 'some stuff 2', isDone: false },
+    { id: 0, comment: 'sup bros' },
+    { id: 1, comment: 'some stuff' },
+    { id: 2, comment: 'some stuff 2' },
 ]

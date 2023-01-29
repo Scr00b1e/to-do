@@ -1,12 +1,12 @@
 import { ToDoType } from '@/types/todo'
 import React from 'react'
 
-const ToDo: React.FC<ToDoType> = ({ name }) => {
+const ToDo: React.FC<ToDoType> = ({ comment }) => {
 
   return (
     <>
       <input type="checkbox" />
-      {name}
+      {comment}
       <button>Delete</button>
     </>
   )
