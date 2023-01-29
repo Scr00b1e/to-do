@@ -1,9 +1,12 @@
+import Add from '@/components/Add'
 import ToDo from '@/components/ToDo'
 import { ToDoProps } from '@/types/todo'
 import { GetStaticProps } from 'next'
+import { useRouter } from 'next/router'
 import React from 'react'
 
 const ToDoPage: React.FC<ToDoProps> = ({ todos }) => {
+    const router = useRouter()
 
     if (!todos) {
         return (
@@ -29,6 +32,7 @@ const ToDoPage: React.FC<ToDoProps> = ({ todos }) => {
 
     return (
         <div className='container'>
+            <Add />
             <ul>
                 {
                     todos &&
@@ -39,6 +43,7 @@ const ToDoPage: React.FC<ToDoProps> = ({ todos }) => {
                     ))
                 }
             </ul>
+            <button onClick={() => router.push('/')}>Back</button>
         </div>
     )
 }

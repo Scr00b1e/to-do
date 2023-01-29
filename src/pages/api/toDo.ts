@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { addTodo } from './addTodo'
 import { ToDoList } from './data/toDoList'
 
 export default function handler(
@@ -9,12 +10,8 @@ export default function handler(
     res.status(200).json(ToDoList)
   } else {
     if (req.method = 'POST') {
-      const toDos = req.body.todos
-      const newToDos = {
-        id: Date.now(),
-        name: toDos
-      }
-      toDos.push(newToDos)
+      const { name: toDoList } = JSON.parse(req.body)
+      addTodo(toDoList)
     }
   }
 }
