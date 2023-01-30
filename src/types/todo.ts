@@ -3,4 +3,5 @@ export type ToDoProps = {
 }
 export type ToDoType = {
     comment: string
+    id: string
 }

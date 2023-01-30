@@ -41,7 +41,7 @@ const ToDoPage: React.FC<ToDoProps> = ({ todos }) => {
                         todos &&
                         todos.map((obj: any) => (
                             <li key={obj.id} className='todoPage__card'>
-                                <ToDo comment={obj.comment} />
+                                <ToDo {...obj} />
                             </li>
                         ))
                     }
