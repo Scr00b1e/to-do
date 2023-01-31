@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { ToDoList } from './data/toDoList'
+import { ToDoList } from './toDo/toDoList'
 
 export default function handler(
   req: NextApiRequest,
