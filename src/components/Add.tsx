@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import React from 'react'
 
 const Add: React.FC = () => {
@@ -12,7 +13,11 @@ const Add: React.FC = () => {
         })
         const data = await res.json()
         console.log(data);
-
+        forceReload()
+    }
+    const router = useRouter()
+    const forceReload = () => {
+        router.reload()
     }
 
     return (
