@@ -5,11 +5,15 @@ import toDoItem from '../pages/api/toDo/[toDoItem]'
 
 const ToDo: React.FC<ToDoType> = ({ comment, id }) => {
   const deleteTodo = async () => {
-    const res = await fetch(`/api/toDo/${toDoItem}`, {
-      method: 'DELETE'
-    })
-    const data = await res.json()
-    console.log(data);
+    try {
+      const res = await fetch(`/api/toDo/${toDoItem}`, {
+        method: 'DELETE'
+      })
+      const data = await res.json()
+      console.log(data);
+    } catch {
+      return alert('Loading...')
+    }
   }
   const router = useRouter()
   const forceReload = () => {
@@ -17,11 +21,13 @@ const ToDo: React.FC<ToDoType> = ({ comment, id }) => {
   }
 
   return (
-    <div onClick={() => forceReload()}>
-      <button onClick={() => deleteTodo(id)}>Delete</button>
-      <div>
+    <div onClick={() => forceReload()} className='toDo'>
+      <button
+        onClick={() => deleteTodo(id)}
+        className='toDo__btn'>Delete</button>
+      <div onClick={(e) => e.stopPropagation()} className="toDo__words">
         <input type="checkbox" />
-        {comment}
+        <p className='toDo__text'>{comment}</p>
       </div>
     </div>
   )

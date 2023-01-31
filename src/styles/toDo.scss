@@ -1,0 +1,21 @@
+.toDo {
+    height: auto;
+
+    &__btn {
+        padding: 10px;
+        font-size: 18px;
+        border: 0;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    &__words {
+        display: flex;
+        margin: 20px 0;
+    }
+
+    &__text {
+        max-width: 300px;
+        margin-left: 10px;
+    }
+}

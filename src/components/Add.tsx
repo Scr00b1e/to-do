@@ -4,16 +4,20 @@ import React from 'react'
 const Add: React.FC = () => {
     const [comment, setComment] = React.useState('')
     const onAdd = async () => {
-        const res = await fetch(`/api/toDo`, {
-            method: 'POST',
-            body: JSON.stringify({ comment }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        const data = await res.json()
-        console.log(data);
-        forceReload()
+        try {
+            const res = await fetch(`/api/toDo`, {
+                method: 'POST',
+                body: JSON.stringify({ comment }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            const data = await res.json()
+            console.log(data);
+            forceReload()
+        } catch {
+            return alert('Something is wrong...')
+        }
     }
     const router = useRouter()
     const forceReload = () => {
@@ -21,9 +25,9 @@ const Add: React.FC = () => {
     }
 
     return (
-        <div>
-            <input type="text" value={comment} onChange={(e) => setComment(e.target.value)} />
-            <button onClick={onAdd}>Add</button>
+        <div className='add'>
+            <input type="text" value={comment} onChange={(e) => setComment(e.target.value)} className='add__text' placeholder='Write something...' />
+            <button onClick={onAdd} className='add__btn'>Add</button>
         </div>
     )
 }

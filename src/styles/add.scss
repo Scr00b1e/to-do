@@ -1,0 +1,35 @@
+.add {
+    background: rgb(240, 162, 73);
+    border-radius: 10px;
+    padding: 5px;
+
+    &__text {
+        background: none;
+        border: none;
+
+        padding: 10px 0;
+        font-size: 22px;
+
+        &:focus {
+            border: none;
+        }
+
+        &::placeholder {
+            color: #fff;
+        }
+    }
+
+    &__btn {
+        padding: 5px;
+        margin-left: 10px;
+
+        font-size: 18px;
+        color: #000;
+
+        border: 0;
+        background: rgb(250, 250, 250);
+        border-radius: 10px;
+
+        cursor: pointer;
+    }
+}

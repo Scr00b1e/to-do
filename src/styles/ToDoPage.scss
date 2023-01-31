@@ -8,14 +8,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   &__card {
-    padding: 20px;
+    padding: 15px;
     margin: 10px;
 
-    width: 200px;
-    height: 100px;
+    width: 300px;
+    height: auto;
 
     display: flex;
     flex-direction: column;
@@ -23,5 +24,6 @@
     align-items: center;
 
     background: rgb(154, 153, 153);
+    border-radius: 15px;
   }
 }

@@ -2,7 +2,6 @@ import Add from '@/components/Add'
 import ToDo from '@/components/ToDo'
 import { ToDoProps } from '@/types/todo'
 import Button from '@mui/material/Button'
-import ListItem from '@mui/material/ListItem'
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import React from 'react'
@@ -12,23 +11,21 @@ const ToDoPage: React.FC<ToDoProps> = ({ todos }) => {
 
     if (!todos) {
         return (
-            <ul>
-                <li>
-                    <input type="text" />
-                    shitty stuff bros
-                    <button>Delete</button>
-                </li>
-                <li>
-                    <input type="text" />
-                    shitty stuff bros
-                    <button>Delete</button>
-                </li>
-                <li>
-                    <input type="text" />
-                    shitty stuff bros
-                    <button>Delete</button>
-                </li>
-            </ul>
+            <div className="container">
+                <h1>Something is wrong...</h1>
+            </div>
+        )
+    }
+
+    if (todos.length === 0) {
+        return (
+            <div className='container'>
+                <div className="todoPage">
+                    <Add />
+                    <h1>There's no to-dos yet</h1>
+                    <Button variant='contained' onClick={() => router.push('/')}>Back</Button>
+                </div>
+            </div>
         )
     }
 
@@ -36,7 +33,7 @@ const ToDoPage: React.FC<ToDoProps> = ({ todos }) => {
         <div className='container'>
             <div className='todoPage'>
                 <Add />
-                <ListItem className='todoPage__list'>
+                <div className='todoPage__list'>
                     {
                         todos &&
                         todos.map((obj: any) => (
@@ -45,7 +42,7 @@ const ToDoPage: React.FC<ToDoProps> = ({ todos }) => {
                             </li>
                         ))
                     }
-                </ListItem>
+                </div>
                 <Button variant='contained' onClick={() => router.push('/')}>Back</Button>
             </div>
         </div>
