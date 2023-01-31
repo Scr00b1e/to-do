@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className='container'>
       <div className='home'>
-        <h1>Welcome!</h1>
+        <h1 className='home__title'>Welcome!</h1>
         <Button variant='contained' onClick={() => router.push('/ToDoPage')}>Go to page</Button>
       </div>
     </div>

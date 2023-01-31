@@ -1,0 +1,35 @@
+.header {
+    width: 100%;
+    height: auto;
+
+    padding: 20px 0;
+    margin-bottom: 30px;
+    background: rgb(253, 140, 1);
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__socials {
+        display: flex;
+        align-items: center;
+
+        p {
+            font-size: 22px;
+            margin-right: 15px;
+        }
+    }
+
+    &__img {
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+
+        background: #fff;
+        border-radius: 10px;
+
+        cursor: pointer;
+    }
+}

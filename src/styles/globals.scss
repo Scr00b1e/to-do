@@ -111,4 +111,8 @@ ul {
   flex-direction: column;
 
   margin-top: 250px;
+
+  &__title {
+    margin-bottom: 30px;
+  }
 }
